@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Gradient Header -->
+    <header class="header">
+        <h1>GitHub Profile Finder</h1>
+
+        <!-- Light/Dark Mode Toggle -->
+        <div class="toggle-container">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="toggle"></label>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter GitHub username...">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Skeleton Loader -->
+    <div id="loader" class="loader hidden">
+        <div class="skeleton-card"></div>
+    </div>
+
+    <!-- Profile Container -->
+    <div id="profileContainer"></div>
+
+    <!-- Repositories Section -->
+    <h2 id="repoTitle" class="hidden">Latest Repositories</h2>
+    <div id="repoList" class="repo-list"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

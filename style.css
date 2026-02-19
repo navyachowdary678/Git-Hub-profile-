@@ -1,0 +1,221 @@
+/* Font & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1f1f, #3f3f3f);
+    min-height: 100vh;
+    padding: 20px;
+    transition: background .3s ease;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+
+/* ---------------------- TOGGLE ---------------------- */
+.toggle-container {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+.toggle {
+    width: 50px;
+    height: 25px;
+    background: #ddd;
+    display: inline-block;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.5px;
+    left: 2px;
+    transition: .3s ease;
+}
+
+#theme-toggle:checked + .toggle {
+    background: #000;
+}
+
+#theme-toggle:checked + .toggle::after {
+    transform: translateX(25px);
+}
+
+/* ---------------------- SEARCH BOX ---------------------- */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 12px 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    color: white;
+    font-size: 16px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 15px #6a11cb;
+}
+
+#searchBtn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 15px;
+    transition: .2s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+#searchBtn:active {
+    transform: scale(0.9);
+}
+
+/* ---------------------- PROFILE CARD ---------------------- */
+.profile-card {
+    margin: 30px auto;
+    width: 350px;
+    padding: 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    animation: fadeUp .5s ease forwards;
+    text-align: center;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,.4);
+    margin-bottom: 10px;
+    transition: transform .3s ease;
+}
+
+.profile-card img:hover {
+    transform: scale(1.05);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.btn-profile {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    transition: transform .25s ease;
+}
+
+.btn-profile:hover {
+    transform: scale(1.05);
+}
+
+/* ---------------------- REPO CARDS ---------------------- */
+.repo-list {
+    max-width: 650px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+.repo-card {
+    padding: 15px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* ---------------------- LOADER ---------------------- */
+.hidden {
+    display: none;
+}
+
+.loader .skeleton-card {
+    width: 350px;
+    height: 200px;
+    margin: 30px auto;
+    border-radius: 20px;
+    background: linear-gradient(-90deg, #333, #444, #333);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0 0; }
+    100% { background-position: -400% 0; }
+}
+
+/* ---------------------- ERROR ---------------------- */
+.error-card {
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255,0,0,0.2);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    animation: shake .4s ease;
+}
+
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
